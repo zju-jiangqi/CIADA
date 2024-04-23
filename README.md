@@ -12,7 +12,7 @@ Semantic scene understanding with Minimalist Optical Systems (MOS) in mobile and
 
 Overall, we investigate the important and interesting problem that the "optimal" image obtained by CI pipeline may not be suitable for downstream visual tasks:
 
-![illustration](Illustration.png)
+![illustration](illustration.png)
 
 In our work, we propose to perform CI for machine perception, rather than human observation, i.e., performing Semantic Segmentation task directly on the raw aberrated data of Minimalist Optical Systems (MOS). 
 
@@ -36,7 +36,7 @@ Without access to labeled aberration images, UDA is a preferred solution to SSOA
 
 We also provide the results of CI&Seg (restoration before segmentation), whose results are limited although with additional computational overhead of a restoration model.
 Moreover, the Computational Imaging Assisted Domain Adaptation (CIADA) framework is delivered as the superior solution to SSOA. We propose to leverage the CI pipeline as an auxiliary task to perform knowledge distillation for the SSOA task. 
-![CIADA](results_figure.png)
+![CIADA](CIADA.png)
 More details can be found in our paper and appendix.
 We hope that our work will inspire more research on the use of aberrated images of MOS for downstream visual tasks, and we believe that the idea of VPL will benefit the data preparation of these tasks.
 
