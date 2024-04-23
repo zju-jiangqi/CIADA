@@ -12,7 +12,7 @@ Semantic scene understanding with Minimalist Optical Systems (MOS) in mobile and
 
 Overall, we investigate the important and interesting problem that the "optimal" image obtained by CI pipeline may not be suitable for downstream visual tasks:
 
-![illustration](Illustration.PNG)
+![illustration](Illustration.png)
 
 In our work, we propose to perform CI for machine perception, rather than human observation, i.e., performing Semantic Segmentation task directly on the raw aberrated data of Minimalist Optical Systems (MOS). 
 
@@ -20,23 +20,23 @@ In our work, we propose to perform CI for machine perception, rather than human 
 In this paper, we pioneer the investigation of Semantic Segmentation under Optical Aberrations (SSOA) with MOS. To benchmark SSOA, we construct Virtual Prototype Lens (VPL) groups through optical simulation, generating Cityscapes-ab and KITTI-360-ab datasets under different behaviors and levels of aberrations.
 We summarize aberration behaviors of MOS: Common Simple Lens (CSL, i.e. spatial-variant degradation) and Hybrid Refractive Diffractive Lens (HRDL, i.e. spatial-
 uniform degradation), and construct Virtual Prototype Lens (VPL) groups to produce simulated imaging results of different MOS. VPL groups contain randomly generated aberration distributions of four levels for CSL and HRDL, respectively. Specifically, we create Cityscapes-ab and KITTI-360-ab to benchmark semantic segmentation under various optical aberrations.
-![behavior](behavior.PNG)
-![simulation](simulation.PNG)
-![VPL](VPL.PNG)
+![behavior](behavior.png)
+![simulation](simulation.png)
+![VPL](VPL.png)
 The generated datasets Cityscapes-ab and KITTI-360-ab are available at our [Baidu Disk](https://pan.baidu.com/s/1O1zT3dHIxn4IXR1w03EUtg?pwd=hv4n).
 Our datasets can benchmark the Domain Adaptive SSOA task set up in the paper, which can bypass the synthetic-to-real gap problem caused by supervised training on aberrated data. 
 The illustration of the task:
-![task](task.PNG)
-![gap](gap.PNG)
+![task](task.png)
+![gap](gap.png)
 
 ### Possible Solutions to SSOA
 Without access to labeled aberration images, UDA is a preferred solution to SSOA. Similar to some semantic segmentation tasks in bad weather, powerful domain adaptive semantic segmentation framework (e.g. [DAFormer](https://github.com/lhoyer/DAFormer) or [HRDA](https://github.com/lhoyer/HRDA)) can be used to solve SSOA problems. By replacing the datasets with ours (Cityscapes to KITTI-360-ab or KITTI-360 to Cityscapes-ab) in their projects ([DAFormer](https://github.com/lhoyer/DAFormer) or [HRDA](https://github.com/lhoyer/HRDA)), good SSOA results will be achieved:
-![results_table](results_table.PNG)
-![results_figure](results_figure.PNG)
+![results_table](results_table.png)
+![results_figure](results_figure.png)
 
 We also provide the results of CI&Seg (restoration before segmentation), whose results are limited although with additional computational overhead of a restoration model.
 Moreover, the Computational Imaging Assisted Domain Adaptation (CIADA) framework is delivered as the superior solution to SSOA. We propose to leverage the CI pipeline as an auxiliary task to perform knowledge distillation for the SSOA task. 
-![CIADA](results_figure.PNG)
+![CIADA](results_figure.png)
 More details can be found in our paper and appendix.
 We hope that our work will inspire more research on the use of aberrated images of MOS for downstream visual tasks, and we believe that the idea of VPL will benefit the data preparation of these tasks.
 
